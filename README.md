@@ -6,7 +6,7 @@ This repo is a **Claude Code plugin marketplace** (`ezugc`) that ships the `ez` 
 
 ## Requirements
 
-- A **paid** EzUGC account and API key (prefix `ezk_live_`). Get one at [www.ezugc.ai](https://www.ezugc.ai).
+- An EzUGC account with an **active paid subscription** and an API key (prefix `ezk_live_`). Sign up, log in, and subscribe at [app.ezugc.ai](https://app.ezugc.ai/), then create an API key in account settings — the API will not issue a key without an active subscription.
 - Node.js 18+ (so `npx` can run the MCP server).
 
 ## Install
@@ -48,7 +48,7 @@ The `/ez:brand-video` skill auto-invokes for these requests.
 
 ## Notes
 
-- A **paid** `ezk_live_` key is required. Unpaid/invalid keys return 401/402 and the tools will stop.
+- A **paid** `ezk_live_` key is required. Unpaid/invalid keys return 401/402 and the tools will stop. If you hit an auth/subscription error (or have no key), sign up & subscribe at [app.ezugc.ai](https://app.ezugc.ai/), create an API key, and set `EZUGC_API_KEY` — don't retry blindly.
 - The plugin contains no version field in `plugin.json`, so every commit to this repo acts as a release.
 
 Learn more at [www.ezugc.ai](https://www.ezugc.ai).

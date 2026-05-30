@@ -16,10 +16,15 @@ This skill is **MCP-first**: every action below is an EzUGC MCP tool call. There
 
 ## Required Preconditions
 
+- An EzUGC account with an **active paid subscription** — the API will not issue a key without one.
 - A **paid** EzUGC API key (prefix `ezk_live_`) configured via the `EZUGC_API_KEY` environment variable.
 - The plugin wires this through `plugins/ez/.mcp.json`, so export it in your shell before launching Claude Code:
   - `export EZUGC_API_KEY="ezk_live_..."`
-- If no key is configured, or `whoami` reports the key is unpaid/invalid, **stop and tell the user**. Never fall back to browser/app cookies, Supabase tokens, or the dashboard session.
+- **If no key is configured**, or `whoami`/any tool reports an auth/subscription error (e.g. the key is unpaid/invalid), **STOP** and tell the user to:
+  1. Sign up / log in and subscribe at https://app.ezugc.ai/
+  2. Create an API key in account settings.
+  3. Set `EZUGC_API_KEY=ezk_live_...` in their environment.
+- Never fall back to browser/app cookies, Supabase tokens, or the dashboard session. Do NOT retry blindly — direct the user to https://app.ezugc.ai/.
 
 ## Verify Auth First
 
@@ -85,6 +90,7 @@ This skill is **MCP-first**: every action below is an EzUGC MCP tool call. There
 ## Hard Rules
 
 - Never proceed without a configured **paid** `ezk_live_` EzUGC API key in `EZUGC_API_KEY`.
+- If any tool returns an auth/subscription error (e.g. `PUBLIC_API_KEY_REQUIRED`, `PUBLIC_API_KEY_INVALID`, `PUBLIC_API_SUBSCRIPTION_REQUIRED`) or no key is configured, STOP and tell the user to sign up & subscribe at https://app.ezugc.ai/, create an API key, and set `EZUGC_API_KEY`. Do NOT retry the call blindly.
 - Never invent a job/video/image result. Always report the actual API response.
 - Never use app cookies, Supabase tokens, or browser sessions for public API work.
 - Only request models returned as `available: true` by `list_video_models` / `list_image_models`.
