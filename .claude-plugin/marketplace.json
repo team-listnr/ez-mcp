@@ -1,0 +1,19 @@
+{
+  "name": "ezugc",
+  "owner": {
+    "name": "EzUGC",
+    "email": "support@ezugc.ai"
+  },
+  "description": "EzUGC plugins for Claude Code — generate UGC/brand videos and image ads with any model via the EzUGC API.",
+  "plugins": [
+    {
+      "name": "ez",
+      "source": "./plugins/ez",
+      "description": "Generate UGC/brand videos and image ads with any model via the EzUGC API.",
+      "homepage": "https://www.ezugc.ai",
+      "repository": "https://github.com/team-listnr/ez-mcp",
+      "keywords": ["ugc", "video", "ads", "ai", "mcp"],
+      "category": "productivity"
+    }
+  ]
+}
