@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "ezugc": {
+      "command": "npx",
+      "args": ["-y", "@ezugc/mcp"],
+      "env": {
+        "EZUGC_API_KEY": "${EZUGC_API_KEY}"
+      }
+    }
+  }
+}

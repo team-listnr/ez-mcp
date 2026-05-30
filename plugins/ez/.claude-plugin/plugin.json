@@ -1,0 +1,11 @@
+{
+  "name": "ez",
+  "description": "Generate UGC/brand videos and image ads with any model via the EzUGC API.",
+  "author": {
+    "name": "EzUGC",
+    "email": "support@ezugc.ai"
+  },
+  "homepage": "https://www.ezugc.ai",
+  "repository": "https://github.com/team-listnr/ez-mcp",
+  "license": "UNLICENSED"
+}
