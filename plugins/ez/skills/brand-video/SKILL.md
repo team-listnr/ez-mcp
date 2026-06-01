@@ -32,6 +32,17 @@ This skill is **MCP-first**: every action below is an EzUGC MCP tool call. There
 2. Call `get_usage` to check remaining quota.
 3. If either fails (401/402) or `paymentStatus` is not `paid`, stop and report it. Do not attempt generation.
 
+## Clarify the format first (if ambiguous)
+
+Before calling `generate_brand_video` / `generate_video` / `generate_ugc_video`, decide the video **format** — it drives the model and the result:
+
+- **Spokesperson / talking-head UGC** — a person speaking to camera.
+- **Product / cinematic / animation b-roll** — e.g. an "animated shampoo bottle product video", with no presenter.
+
+If the brief already makes the format clear, proceed (don't over-ask). If it's genuinely ambiguous, ask ONE quick clarifying question (e.g. "Do you want a spokesperson talking to camera, or a product/animation video with no presenter?") and, if relevant, whether they have a model preference — then generate. The job path is fire-and-forget, so it can't ask mid-job; clarify here, before the tool call.
+
+The backend auto-picks a sensible model from the brief when none is specified (talking-head → Veo; product/cinematic → a premium cinematic model like Sora 2 Pro). The user can override by naming a model.
+
 ## Picking a Model
 
 1. Call `list_video_models` to see available models, capabilities, durations, and ids.
