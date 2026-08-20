@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "ezugc": {
+      "url": "https://api.ezugc.ai/mcp"
+    }
+  }
+}

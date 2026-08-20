@@ -1,0 +1,22 @@
+{
+  "name": "ezugc",
+  "owner": {
+    "name": "EzUGC",
+    "email": "support@ezugc.ai"
+  },
+  "metadata": {
+    "description": "Generate on-brand UGC videos and image ads with any model from Cursor."
+  },
+  "plugins": [
+    {
+      "name": "ezugc",
+      "source": "plugins/ez",
+      "description": "Generate on-brand UGC videos and image ads with any model via the EzUGC MCP server.",
+      "homepage": "https://www.ezugc.ai/mcp",
+      "repository": "https://github.com/team-listnr/ez-mcp",
+      "license": "MIT",
+      "keywords": ["ugc", "video", "ads", "mcp", "brand", "sora", "veo"],
+      "logo": "plugins/ez/assets/logo.svg"
+    }
+  ]
+}
