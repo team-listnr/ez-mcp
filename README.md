@@ -66,13 +66,31 @@ Claude Code starts `@ezugc/mcp` via npx and reads `EZUGC_API_KEY` from the envir
 ## What you get
 
 - **MCP server** (`ezugc`): `whoami`, `get_usage`, video/image generation, brands, saved skills, jobs, and Super Agent tools.
-- **Skills:** `brand-video` (pick a model, ingest a website, generate on-brand video/image ads) and `brand-assets` (inspect/update the brand book and reuse assets).
+- **Skills:** `ai-video-generation` (any catalog model), `ugc-generation` (talking-head UGC ads), `ezugc-setup` (API key), `brand-video` (on-brand video/image ads), and `brand-assets` (brand book and assets).
+
+## skills.sh
+
+Install into Cursor, Claude Code, Codex, or any supported agent:
+
+```bash
+npx skills add team-listnr/ez-mcp
+```
+
+Or pick one:
+
+```bash
+npx skills add team-listnr/ez-mcp --skill ai-video-generation
+npx skills add team-listnr/ez-mcp --skill ugc-generation
+```
+
+[![skills.sh](https://skills.sh/b/team-listnr/ez-mcp)](https://skills.sh/team-listnr/ez-mcp)
 
 ## Usage
 
 - "Check my EzUGC account with whoami, then list the video models."
 - "Make a 15s launch teaser with Sora 2."
 - "Create a video for my brand from acme.com."
+- "Create a 20s UGC ad for my running shoe."
 - "Generate a static image ad for my brand, 4 variations, 1:1."
 
 ## Notes
